@@ -34,15 +34,15 @@ class Keyboard(gui.MenuGUI):
     async def callback(self, interaction: discord.Interaction):
         self.data_transfer += interaction.data["custom_id"]
         await interaction.response.defer(ephemeral=True, thinking=False)
-        await self.interaction.edit_original_response(content=self.data_transfer, view=Keyboard(self.interaction, self.data_transfer, self.page))
+        await self.interaction.edit_original_response(content=self.data_transfer)
 
     async def backspace(self, interaction: discord.Interaction):
         self.data_transfer = self.data_transfer[:-1]
         await interaction.response.defer(ephemeral=True, thinking=False)
-        await self.interaction.edit_original_response(content=self.data_transfer, view=Keyboard(self.interaction, self.data_transfer, self.page))
+        await self.interaction.edit_original_response(content=self.data_transfer)
 
     async def space(self, interaction: discord.Interaction):
         self.data_transfer += " "
         await interaction.response.defer(ephemeral=True, thinking=False)
-        await self.interaction.edit_original_response(content=self.data_transfer, view=Keyboard(self.interaction, self.data_transfer, self.page))
+        await self.interaction.edit_original_response(content=self.data_transfer)
 
