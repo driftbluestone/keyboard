@@ -16,6 +16,7 @@ class Kb(commands.Cog):
 
 class Keyboard(gui.MenuGUI):
     def __init__(self, interaction: discord.Interaction, data_transfer: str, page: int = 1):
+        raise KeyError
         keys = sorted(list(set("ABCDEFGHIJKJMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890-=_+[]{};':\"\\,.<>/?`~!@#$%^&*()")))
         super().__init__(interaction=interaction, element_count=len(keys), data_transfer=data_transfer, text=data_transfer, page=page)
         keys = keys[((self.page-1)*10):(self.page*10)]
